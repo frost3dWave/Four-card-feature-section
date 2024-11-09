@@ -1,0 +1,223 @@
+:root {
+    --clr-primary-red: hsl(0, 78%, 62%);
+    --clr-primary-cyan: hsl(180, 62%, 55%);
+    --clr-primary-orange: hsl(34, 97%, 64%);
+    --clr-primary-blue: hsl(212, 86%, 64%);
+    --clr-secondary-dark-blue: hsl(234, 12%, 34%);
+    --clr-secondary-grey-blue: hsl(229, 6%, 66%);
+    --clr-secondary-light-grey: hsl(0, 0%, 98%);
+}
+
+/* CSS RESET  */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* MAIN PAGE CSS  */
+body{
+    background: var(--clr-secondary-light-grey);
+    color: var(--clr-secondary-dark-blue);
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 0.9375rem;
+    text-align: center;
+}
+
+main {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: clamp(1rem, -4.8182rem + 29.0909vw, 2rem);
+}
+
+header {
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: clamp(1.5rem, 1.2143rem + 1.2vw, 2.5rem);
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+h1 span {
+    font-weight: 200;
+}
+
+header p {
+    color: var(--clr-secondary-grey-blue);
+    font-size: clamp(0.9375rem, 0.8768rem + 0.3036vw, 1.15rem);
+    font-weight: 400;
+    max-inline-size: 40ch;
+}
+
+.grid {
+    margin-top: 64px;
+    display: grid;
+    gap: clamp(1.5625rem, 1.3839rem + 0.8929vw, 2.1875rem);
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+    padding-inline: 16px;
+    background: white;
+    box-shadow: 3px 3px 10px var(--clr-secondary-grey-blue);
+    border-radius: 5px;
+    padding-block: 8px;
+    max-inline-size: clamp(18.4375rem, 17.9911rem + 2.2321vw, 20rem);
+    max-block-size:  clamp(11.75rem, 10.1964rem + 7.7679vw, 17.1875rem);
+}
+
+article p {
+    margin-top: 10px;
+    font-size: 0.875rem;
+}
+
+article img {
+    max-inline-size: 3rem;
+    margin-block: 16px;
+    align-self: end;
+}
+
+.supervisior {
+    border-top: 4px solid var(--clr-primary-cyan);
+}
+
+.team-builder {
+    border-top: 4px solid var(--clr-primary-red);
+}
+
+.karma {
+    border-top: 4px solid var(--clr-primary-orange);
+}
+
+.calculator {
+    border-top: 4px solid var(--clr-primary-blue);
+}
+
+@media (min-width: 48rem) {
+
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media (min-width: 64rem) {
+
+    header p{
+        max-inline-size: 55ch;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .supervisior {
+        grid-column: 1 / 5;
+        grid-row: 2/4;
+
+    }
+
+    .team-builder {
+        grid-column: 5/9;
+        grid-row: 1/3;
+
+    }
+
+    .karma{
+        grid-column: 5/9;
+        grid-row: 3/5;
+
+    }
+
+    .calculator{
+        grid-column: 9/13;
+        grid-row: 2/4;
+    }
+}
+
+.attribution { font-size: 0.6875rem; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
