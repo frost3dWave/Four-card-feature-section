@@ -102,25 +102,22 @@ main {
     padding-inline: clamp(1rem, -4.8182rem + 29.0909vw, 2rem);
 }
 
-header {
-    margin-top: 20px;
-}
-
 h1 {
     font-size: clamp(1.5rem, 1.2143rem + 1.2vw, 2.5rem);
     line-height: 1.5;
     font-weight: 600;
 }
 
+h1 span {
+    display: block;
+    font-weight: 200;
+}
+
 h3 {
     font-weight: 600;
 }
 
-h1 span {
-    font-weight: 200;
-}
-
-header p {
+h1 + p {
     color: var(--clr-secondary-grey-blue);
     font-size: clamp(0.9375rem, 0.8768rem + 0.3036vw, 1.15rem);
     font-weight: 400;
@@ -131,6 +128,7 @@ header p {
     margin-top: 64px;
     display: grid;
     gap: clamp(1.5625rem, 1.3839rem + 0.8929vw, 2.1875rem);
+    max-inline-size: 1280px;
 }
 
 article {
@@ -142,50 +140,42 @@ article {
     background: white;
     box-shadow: 3px 3px 10px var(--clr-secondary-grey-blue);
     border-radius: 5px;
-    padding-block: 8px;
-    max-inline-size: clamp(18.4375rem, 17.9911rem + 2.2321vw, 20rem);
-    max-block-size:  clamp(11.75rem, 10.1964rem + 7.7679vw, 17.1875rem);
+    padding-block: clamp(0.5rem, 0.3571rem + 0.7143vw, 1rem);
 }
 
 article p {
-    margin-top: 10px;
+    margin-top: clamp(0.625rem, 0.5179rem + 0.5357vw, 1rem);
     font-size: 0.875rem;
+    max-inline-size: 35ch;
 }
 
 article img {
-    max-inline-size: 3rem;
-    margin-block: 16px;
+    max-inline-size: clamp(3rem, 2.7143rem + 1.4286vw, 4rem);
+    margin-top: clamp(1rem, 0.8571rem + 0.7143vw, 1.5rem);
+    margin-bottom: 16px;
     align-self: end;
 }
 
 .supervisior {
-    border-top: 4px solid var(--clr-primary-cyan);
+    border-top: 5px solid var(--clr-primary-cyan);
 }
 
 .team-builder {
-    border-top: 4px solid var(--clr-primary-red);
+    border-top: 5px solid var(--clr-primary-red);
 }
 
 .karma {
-    border-top: 4px solid var(--clr-primary-orange);
+    border-top: 5px solid var(--clr-primary-orange);
 }
 
 .calculator {
-    border-top: 4px solid var(--clr-primary-blue);
+    border-top: 5px solid var(--clr-primary-blue);
 }
 
-@media (min-width: 48rem) {
-
-    .grid{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-}
 
 @media (min-width: 64rem) {
 
-    header p{
+    h1 + p{
         max-inline-size: 55ch;
     }
 
